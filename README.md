@@ -1,3 +1,52 @@
+# 🤟 Silent Voice API Testing Project
+
+> An automated API testing suite for the **Silent Voice** platform — a system that helps people with hearing and speech disabilities by transcribing voice to text and converting text to sign language.
+
+**API Under Test:** `http://silentvoice.runasp.net`
+
+---
+
+## 👥 Team Members
+
+| Name | Role |
+|------|------|
+| Islam Waled | QA Engineer |
+| Shrouk Elkassas | QA Engineer |
+
+---
+
+## 🛠️ Tech Stack
+
+| Tool | Version | Purpose |
+|------|---------|---------|
+| Java | 17 | Programming language |
+| RestAssured | 5.4.0 | API testing framework |
+| TestNG | 7.9.0 | Test execution & management |
+| Allure | 2.27.0 | Test reporting |
+| Maven | — | Build & dependency management |
+| GitHub Actions | — | CI/CD pipeline |
+
+---
+
+## 📁 Project Structure
+
+    allure_project/
+    ├── src/
+    │   └── test/
+    │       ├── java/
+    │       │   └── tests/
+    │       │       ├── BaseTest.java       # Base configuration & setup
+    │       │       ├── AuthTest.java       # Authentication test cases
+    │       │       ├── SignTest.java       # Sign language test cases
+    │       │       └── VoiceTest.java      # Voice transcription test cases
+    │       └── resources/
+    │           └── koko.wav                # Sample audio file for testing
+    ├── .github/
+    │   └── workflows/
+    │       └── ci.yml                      # GitHub Actions workflow
+    ├── pom.xml                             # Maven dependencies
+    └── testng.xml                          # TestNG suite configuration
+
 ---
 
 ## 🧪 Test Coverage
@@ -56,16 +105,12 @@
 
 ### Run All Tests
 
-```bash
-cd allure_project
-mvn clean test
-```
+    cd allure_project
+    mvn clean test
 
 ### Generate & View Allure Report
 
-```bash
-.allure\allure-2.27.0\bin\allure.bat serve target\allure-results
-```
+    .allure\allure-2.27.0\bin\allure.bat serve target\allure-results
 
 ---
 
@@ -75,3 +120,4 @@ This project uses **GitHub Actions** to automatically run tests on every push or
 
 The Allure report is published to **GitHub Pages** after each run.
 
+🔗 **Live Report:** [https://eslamwaled150.github.io/Silent_Voice-API-Testing-Project/](https://eslamwaled150.github.io/Silent_Voice-API-Testing-Project/)
