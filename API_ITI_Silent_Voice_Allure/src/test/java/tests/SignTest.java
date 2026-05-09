@@ -33,7 +33,7 @@ public class SignTest extends BaseTest {
                 .body("signID", notNullValue())
                 .extract().path("signID");
 
-        System.out.println("Sign saved with ID: " + signID);
+        log.info("Sign saved with ID: {}", signID);
     }
 
     @Test(priority = 8)
@@ -49,7 +49,7 @@ public class SignTest extends BaseTest {
                 .statusCode(200)
                 .body("$", not(empty()));
 
-        System.out.println("Sign history retrieved");
+        log.info("Sign history retrieved");
     }
 
     @Test(priority = 9)
@@ -65,7 +65,7 @@ public class SignTest extends BaseTest {
                 .statusCode(200)
                 .body("signID", equalTo(signID));
 
-        System.out.println("Sign by ID retrieved: " + signID);
+        log.info("Sign by ID retrieved: {}", signID);
     }
 
     @Test(priority = 10)
@@ -80,7 +80,7 @@ public class SignTest extends BaseTest {
                 .then()
                 .statusCode(anyOf(equalTo(404), equalTo(400)));
 
-        System.out.println("Non-existing sign correctly rejected");
+        log.info("Non-existing sign correctly rejected");
     }
 
     @Test(priority = 11)
@@ -94,7 +94,7 @@ public class SignTest extends BaseTest {
                 .then()
                 .statusCode(401);
 
-        System.out.println("Unauthorized correctly rejected");
+        log.info("Unauthorized correctly rejected");
     }
     @Test(priority = 12)
     @Story("Save Sign")
@@ -116,6 +116,6 @@ public class SignTest extends BaseTest {
                 .then()
                 .statusCode(400);
 
-        System.out.println("Empty sentence correctly rejected");
+        log.info("Empty sentence correctly rejected");
     }
     }
