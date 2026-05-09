@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.*;
 @Feature("Sign Language")
 public class SignTest extends BaseTest {
 
-    @Test(priority = 3)
+    @Test(priority = 7)
     @Story("Save Sign")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Save a sign sentence — expects 200 OK and signID returned")
@@ -36,7 +36,7 @@ public class SignTest extends BaseTest {
         System.out.println("Sign saved with ID: " + signID);
     }
 
-    @Test(priority = 4)
+    @Test(priority = 8)
     @Story("Sign History")
     @Severity(SeverityLevel.NORMAL)
     @Description("Get sign history — expects 200 OK and non-empty array")
@@ -52,7 +52,7 @@ public class SignTest extends BaseTest {
         System.out.println("Sign history retrieved");
     }
 
-    @Test(priority = 5)
+    @Test(priority = 9)
     @Story("Get Sign by ID")
     @Severity(SeverityLevel.NORMAL)
     @Description("Get sign by valid ID — expects 200 OK and correct signID")
@@ -68,7 +68,7 @@ public class SignTest extends BaseTest {
         System.out.println("Sign by ID retrieved: " + signID);
     }
 
-    @Test(priority = 6)
+    @Test(priority = 10)
     @Story("Get Sign by ID")
     @Severity(SeverityLevel.MINOR)
     @Description("Get sign by non-existing ID (99999) — expects 400 or 404")
@@ -83,7 +83,7 @@ public class SignTest extends BaseTest {
         System.out.println("Non-existing sign correctly rejected");
     }
 
-    @Test(priority = 7)
+    @Test(priority = 11)
     @Story("Sign History")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Get sign history without token — expects 401 Unauthorized")
@@ -96,7 +96,7 @@ public class SignTest extends BaseTest {
 
         System.out.println("Unauthorized correctly rejected");
     }
-    @Test(priority = 9)
+    @Test(priority = 12)
     @Story("Save Sign")
     @Severity(SeverityLevel.NORMAL)
     @Description("Save sign with empty sentence — expects 400 Bad Request")
