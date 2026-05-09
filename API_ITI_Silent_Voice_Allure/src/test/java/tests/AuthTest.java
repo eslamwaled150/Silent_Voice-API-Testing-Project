@@ -34,7 +34,7 @@ public class AuthTest extends BaseTest {
                 .body("token", nullValue())
                 .body("message", containsString("OTP"));
 
-        System.out.println("Registered: " + registeredEmail);
+        log.info("Registered: {}", registeredEmail);
     }
 
     @Test(priority = 2, dependsOnMethods = "testRegisterValidData")
@@ -57,7 +57,7 @@ public class AuthTest extends BaseTest {
                 .statusCode(200)
                 .body("message", containsString("confirmed"));
 
-        System.out.println("Email confirmed with OTP: " + FIXED_OTP);
+        log.info("Email confirmed with OTP: {}", FIXED_OTP);
     }
 
     @Test(priority = 3, dependsOnMethods = "testConfirmEmailFixedOtp")
@@ -82,10 +82,10 @@ public class AuthTest extends BaseTest {
                 .body("token", notNullValue())
                 .extract().path("token");
 
-        System.out.println("Token saved: " + token.substring(0, 20) + "...");
+        log.info("Token saved: {}", token.substring(0, 20) + "...");
     }
 
-    @Test(priority = 4, dependsOnMethods = "testLoginValidCredentials")
+    @Test(priority = 4,dependsOnMethods = "testLoginValidCredentials")
     @Story("Login")
     @Severity(SeverityLevel.NORMAL)
     @Description("Login with wrong password — expects 400 or 401")
@@ -104,7 +104,7 @@ public class AuthTest extends BaseTest {
                 .then()
                 .statusCode(anyOf(equalTo(400), equalTo(401)));
 
-        System.out.println("Wrong password correctly rejected");
+        log.info("Wrong password correctly rejected");
     }
 
     @Test(priority = 5, dependsOnMethods = "testRegisterValidData")
@@ -129,7 +129,7 @@ public class AuthTest extends BaseTest {
                 .then()
                 .statusCode(400);
 
-        System.out.println("Duplicate email correctly rejected");
+        log.info("Duplicate email correctly rejected");
     }
 
     @Test(priority = 6)
@@ -151,7 +151,7 @@ public class AuthTest extends BaseTest {
                 .then()
                 .statusCode(anyOf(equalTo(400), equalTo(404)));
 
-        System.out.println("Non-existing email correctly rejected");
+        log.info("Non-existing email correctly rejected");
     }
   }
 
