@@ -6,6 +6,8 @@ import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.BeforeSuite;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import static io.restassured.RestAssured.given;
 
@@ -19,6 +21,8 @@ public class BaseTest {
     protected static final String BASE_URL   = "http://silentvoice.runasp.net";
     protected static final String PASSWORD   = "eslam45/*";
     protected static final String FIXED_OTP  = "123456";
+
+    protected static final Logger log = LogManager.getLogger(BaseTest.class);
 
     @BeforeSuite
     public void setup() {
