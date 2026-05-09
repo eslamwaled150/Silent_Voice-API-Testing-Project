@@ -30,23 +30,27 @@
 
 ## 📁 Project Structure
 
-    allure_project/
-    ├── src/
-    │   └── test/
-    │       ├── java/
-    │       │   └── tests/
-    │       │       ├── BaseTest.java       # Base configuration & setup
-    │       │       ├── AuthTest.java       # Authentication test cases
-    │       │       ├── SignTest.java       # Sign language test cases
-    │       │       └── VoiceTest.java      # Voice transcription test cases
-    │       └── resources/
-    │           └── koko.wav                # Sample audio file for testing
+    Silent_Voice-API-Testing-Project/
     ├── .github/
     │   └── workflows/
     │       └── ci.yml                      # GitHub Actions workflow
-    ├── pom.xml                             # Maven dependencies
-    └── testng.xml                          # TestNG suite configuration
-
+    └── API_ITI_Silent_Voice_Allure/
+        ├── src/
+        │   └── test/
+        │       ├── java/
+        │       │   └── tests/
+        │       │       ├── BaseTest.java       # Base configuration & setup
+        │       │       ├── AuthTest.java       # Authentication test cases
+        │       │       ├── SignTest.java       # Sign language test cases
+        │       │       └── VoiceTest.java      # Voice transcription test cases
+        │       └── resources/
+        │           ├── koko.wav                # Sample WAV file for testing
+        │           ├── 0703.mp3                # Sample MP3 file (negative test)
+        │           ├── allure.properties       # Allure configuration
+        │           └── log4j2.xml              # Logging configuration
+        ├── pom.xml                             # Maven dependencies
+        ├── testng.xml                          # TestNG suite configuration
+        └── run_tests.bat                       # Local test runner script
 ---
 
 ## 🧪 Test Coverage
