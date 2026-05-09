@@ -18,7 +18,6 @@ public class VoiceTest extends BaseTest {
             File file = File.createTempFile("fake_audio", ".mp3");
             file.deleteOnExit();
             try (FileOutputStream fos = new FileOutputStream(file)) {
-                // MP3 magic bytes
                 fos.write(new byte[]{(byte)0xFF, (byte)0xFB, 0x50, 0x00, 0x00, 0x00, 0x00, 0x00});
             }
             return file;
