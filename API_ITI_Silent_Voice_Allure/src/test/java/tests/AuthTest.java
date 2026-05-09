@@ -132,7 +132,7 @@ public class AuthTest extends BaseTest {
         System.out.println("Duplicate email correctly rejected");
     }
 
-    @Test(priority = 7)
+    @Test(priority = 6)
     @Story("Login")
     @Severity(SeverityLevel.NORMAL)
     @Description("Login with non-existing email — expects 400 or 404")
